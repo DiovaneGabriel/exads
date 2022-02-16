@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, "index"]);
 Route::get('/prime-numbers', [HomeController::class, "prime_numbers"]);
 Route::get('/ascii-array', [HomeController::class, "ascii_array"]);
+Route::get('/tv-series', [HomeController::class, "tv_series"]);
