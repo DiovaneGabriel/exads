@@ -8,7 +8,8 @@
             <div class="ml-12 mr-12">
                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                     <form action="">
-                        <input value="{!!$search!!}" type="text" class="w-100 text-gray-600" name="search" placeholder="Search by title...">
+                        <input value="{!!$search!!}" type="text" class="w-50 text-gray-600" name="search" placeholder="Search by title...">
+                        <input value="{!!$date!!}" type="datetime" class="w-auto text-gray-600 right" name="date" placeholder="Next after">
                     </form>
                 </div>
             </div>

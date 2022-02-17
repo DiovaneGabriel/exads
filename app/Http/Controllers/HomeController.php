@@ -60,14 +60,19 @@ class HomeController extends Controller {
     public function tv_series(Request $request) {
 
         $search = $request->input('search');
+        $date = $request->input('date');
+
+        $date = $date ? $date : date("Y-m-d H:i");
+
         if ($search) {
-            $intervals = TvSerieInterval::whereTitle($search)->orderBy("week_day")->orderBy("show_time");
+            $intervals = TvSerieInterval::whereTitle($search)->sortByDate($date);
         } else {
-            $intervals = TvSerieInterval::orderBy("week_day")->orderBy("show_time");
+            $intervals = TvSerieInterval::sortByDate($date);
         }
 
         $data['intervals'] = $intervals->get();
         $data['search'] = $search;
+        $data['date'] = $date;
 
         return view('tv-series', $data);
     }
