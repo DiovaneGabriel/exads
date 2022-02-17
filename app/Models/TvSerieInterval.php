@@ -11,4 +11,8 @@ class TvSerieInterval extends Model {
     public function tvSerie() {
         return $this->belongsTo(TvSerie::class, "id_tv_series", "id");
     }
+    public static function whereTitle($title) {
+        $tvSerie = TvSerie::where("title", "LIKE", "%$title%")->get()->pluck('id')->toArray();
+        return TvSerieInterval::whereIn("id_tv_series", $tvSerie);
+    }
 }

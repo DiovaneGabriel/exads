@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TvSerie extends Model {
     use HasFactory;
     public function intervals() {
-        // return $this->hasMany(TvSerieInterval::class, "id", "id_tv_series");
-        return TvSerieInterval::whereIdTvSeries($this->id)->get();
+        return $this->hasMany(TvSerieInterval::class, "id_tv_series", "id");
     }
 }

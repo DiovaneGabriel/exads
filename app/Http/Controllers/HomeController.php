@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\TvSerie;
 use App\Models\TvSerieInterval;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller {
     public function index() {
@@ -56,12 +57,18 @@ class HomeController extends Controller {
         return view('ascii-array', $data);
     }
 
-    public function tv_series() {
+    public function tv_series(Request $request) {
 
-        $serie = TvSerie::find(1);
+        $search = $request->input('search');
+        if ($search) {
+            $intervals = TvSerieInterval::whereTitle($search)->orderBy("week_day")->orderBy("show_time");
+        } else {
+            $intervals = TvSerieInterval::orderBy("week_day")->orderBy("show_time");
+        }
 
-        dd($serie->intervals());
+        $data['intervals'] = $intervals->get();
+        $data['search'] = $search;
 
-        return view('tv-series');
+        return view('tv-series', $data);
     }
 }
