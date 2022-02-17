@@ -16,8 +16,9 @@ class TvSerieInterval extends Model {
         return TvSerieInterval::whereIn("id_tv_series", $tvSerie);
     }
     public static function sortByDate($date) {
+        $date = date("Y-m-d H:i", strtotime($date));
         $week_day = date("w", strtotime($date)) + 1;
-        $time = date("H:i", strtotime($date));
-        return TvSerieInterval::orderByRaw("if(abs(week_day - $week_day)=0,if(subtime(show_time ,'$time')<0,7,0),abs(week_day - $week_day))");
+        $order_by = "concat(DATE_ADD(date('$date'), INTERVAL abs($week_day-if(week_day < $week_day,week_day + 7,week_day)) DAY),' ',show_time)";
+        return TvSerieInterval::orderByRaw("'$date' > $order_by")->orderByRaw($order_by);
     }
 }

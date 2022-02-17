@@ -61,18 +61,22 @@ class HomeController extends Controller {
 
         $search = $request->input('search');
         $date = $request->input('date');
+        $time = $request->input('time');
 
-        $date = $date ? $date : date("Y-m-d H:i");
+        $date = $date ? $date : date("Y/m/d");
+        $time = $time ? $time : date("H:i");
 
         if ($search) {
-            $intervals = TvSerieInterval::whereTitle($search)->sortByDate($date);
+            $intervals = TvSerieInterval::whereTitle($search)->sortByDate($date." ".$time);
+            // $intervals = TvSerieInterval::sortByDate($date." ".$time)->whereIn("id_tv_series", [1]);
         } else {
-            $intervals = TvSerieInterval::sortByDate($date);
+            $intervals = TvSerieInterval::sortByDate($date." ".$time);
         }
 
         $data['intervals'] = $intervals->get();
         $data['search'] = $search;
         $data['date'] = $date;
+        $data['time'] = $time;
 
         return view('tv-series', $data);
     }
