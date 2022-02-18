@@ -1,6 +1,6 @@
 ## How to run
 
-Use ````php artisan serve``` for execute the project in your computer;
+Use ```php artisan serve``` for execute the project in your computer;
 Configure a MySql instance on ```.env``` file, like the example below;
 ```DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
