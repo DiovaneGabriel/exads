@@ -1,12 +1,18 @@
 ## How to run
 
 Configure a MySql instance on ``.env`` file, like the example below:
+
 ``
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=exads
+
 DB_USERNAME=exads
+
 DB_PASSWORD=exads
 ``
 
