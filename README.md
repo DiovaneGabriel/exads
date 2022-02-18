@@ -20,8 +20,11 @@ Execute ```php artisan migrate --seed``` for create tables and seed data;
 Use ```php artisan serve``` for execute the project in your computer;
 
 Prime Number codes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Http/Controllers/PrimeNumbersController.php) and [here](https://github.com/DiovaneGabriel/exads/blob/main/resources/views/prime-numbers.blade.php)
+
 ASCII Array codes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Http/Controllers/ASCIIArrayController.php) and [here](https://github.com/DiovaneGabriel/exads/blob/main/resources/views/ascii-array.blade.php)
+
 TV Series codes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Http/Controllers/TVSeriesController.php) and [here](https://github.com/DiovaneGabriel/exads/blob/main/resources/views/tv-series.blade.php)
+
 A/B Testing codes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Http/Controllers/ABTestingController.php) and [here](https://github.com/DiovaneGabriel/exads/blob/main/resources/views/ab-testing.blade.php)
 
 TV Series classes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Models/TvSerie.php) and [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Models/TvSerieInterval.php)
