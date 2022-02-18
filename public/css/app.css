@@ -120,6 +120,10 @@ video {
     margin-right: auto;
 }
 
+.m-auto{
+    margin: auto;
+}
+
 .ml-1 {
     margin-left: 0.25rem;
 }
@@ -315,7 +319,7 @@ td {
     text-align: center;
 }
 
-input:focus {
+input:focus, select {
     outline: 0;
     /* box-shadow: 0px 0px 2px 0px #3498db; */
 }
@@ -329,6 +333,40 @@ input[type="submit"]{
     display: grid;
     grid-template-columns: auto 80px 45px 45px;
     column-gap: 5px;
+}
+
+.custom-grid {
+    grid-template-columns: 1fr;
+}
+.grid-head{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    border-bottom-width: 1px;
+}
+.design{
+    background-color: #f7faf6;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    min-width: 10rem;
+}
+.design span{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+}
+.design span.percent{
+    background-color: #e2e8f0;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.design span.percent:not(.best){
+    font-weight: normal;
 }
 
 @media (min-width: 640px) {

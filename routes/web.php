@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ABTestingController;
+use App\Http\Controllers\ASCIIArrayController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PrimeNumbersController;
+use App\Http\Controllers\TVSeriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, "index"]);
-Route::get('/prime-numbers', [HomeController::class, "prime_numbers"]);
-Route::get('/ascii-array', [HomeController::class, "ascii_array"]);
-Route::get('/tv-series', [HomeController::class, "tv_series"]);
+Route::get('/prime-numbers', [PrimeNumbersController::class, "index"]);
+Route::get('/ascii-array', [ASCIIArrayController::class, "index"]);
+Route::get('/tv-series', [TVSeriesController::class, "index"]);
+Route::get('/ab-testing', [ABTestingController::class, "index"]);
