@@ -320,6 +320,17 @@ input:focus {
     /* box-shadow: 0px 0px 2px 0px #3498db; */
 }
 
+input[type="submit"]{
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+#tv-series{
+    display: grid;
+    grid-template-columns: auto 80px 45px 45px;
+    column-gap: 5px;
+}
+
 @media (min-width: 640px) {
     .sm\:rounded-lg {
         border-radius: 0.5rem;

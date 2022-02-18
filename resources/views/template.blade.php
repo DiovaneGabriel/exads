@@ -34,7 +34,7 @@
             <div class="justify-center mt-4 sm:items-center sm:justify-between w-100">
                 <div class="ml-4 text-center text-sm text-gray-500 sm:ml-0">
                     {{-- Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) --}}
-                    with &#10084; by <a href="https://diovane.me">diovane.me</a>
+                    by <a href="https://diovane.me">diovane.me</a>
                 </div>
             </div>
         </div>
