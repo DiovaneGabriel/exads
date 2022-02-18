@@ -7,7 +7,7 @@
             <div class="p-6">
                 <div class="ml-12 mr-12">
                     <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                        <form id="tv-series" action="/tv-series">
+                        <form id="tv-series" action="">
                             <input value="{!! $search !!}" type="text" class="w-100 text-gray-600" name="search"
                                 placeholder="Search by title...">
                             <input value="{!! $date !!}" type="text" class="text-gray-600 datepicker text-center" name="date">
