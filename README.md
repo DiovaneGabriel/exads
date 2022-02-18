@@ -14,7 +14,9 @@ DB_PASSWORD=exads
 ```
 
 Execute ```composer update``` for update composer dependencies;
+
 Execute ```php artisan migrate --seed``` for create tables and seed data;
+
 Use ```php artisan serve``` for execute the project in your computer;
 
 Prime Number codes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Http/Controllers/PrimeNumbersController.php) and [here](https://github.com/DiovaneGabriel/exads/blob/main/resources/views/prime-numbers.blade.php)
