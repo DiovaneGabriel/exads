@@ -6,11 +6,11 @@
 <style>
     @media (min-width: 1000px) {
         .custom-grid {
-            grid-template-columns: repeat({!!count($designs)!!},1fr);
+            grid-template-columns: repeat(1,1fr);
             border-bottom-width: 0px;
         }
         .grid-head{
-            grid-column-end: {!!count($designs) + 1!!};
+            grid-column-end: 2;
         }
     }
 </style>
@@ -32,18 +32,16 @@
                 </div>
             </form>
         </div>
-        @foreach($designs as $design)
-            <div class="p-6">
-                <div class="design">
-                    <span class="title">
-                        {{$design['designName']}}
-                    </span>
-                    <span class="percent {{$design['splitPercent'] == $best ? "best green" : ""}}">
-                        {{$design['splitPercent']}}%
-                    </span>
-                </div>
+        <div class="p-6">
+            <div class="design">
+                <span class="title" title="{{$design['designId']}}">
+                    {{$design['designName']}}
+                </span>
+                <span class="percent best green">
+                    {{$design['splitPercent']}}%
+                </span>
             </div>
-        @endforeach
+        </div>
     </div>
 </div>
 <script>
