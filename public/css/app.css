@@ -331,7 +331,7 @@ input[type="submit"]{
 
 #tv-series{
     display: grid;
-    grid-template-columns: auto 80px 45px 45px;
+    grid-template-columns: auto 80px 90px 45px;
     column-gap: 5px;
 }
 

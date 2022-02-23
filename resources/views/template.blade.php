@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{url('/css/app.css')}}" rel="stylesheet">
 </head>
 
 <body class="antialiased">
@@ -27,7 +27,7 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                 <h1 class="w-100 text-center mt-12">
-                    <a href="/">@yield('title')</a>
+                    <a href="{{url('')}}">@yield('title')</a>
                 </h1>
             </div>
             @yield('content')
