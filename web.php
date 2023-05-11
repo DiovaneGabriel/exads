@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\ABTestingController;
-use App\Http\Controllers\ASCIIArrayController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PrimeNumbersController;
-use App\Http\Controllers\TVSeriesController;
 use Illuminate\Support\Facades\Route;
 
 /*

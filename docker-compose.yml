@@ -1,0 +1,70 @@
+version: '2'
+# https://github.com/cesarlopes/docker-apache-php-mysql-phpmyadmin-ssl/blob/master/.docker/apache/000-default.conf
+services:
+  # db:
+  #   image: mysql:8.0
+  #   ports:
+  #     - "3306:3306"
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   environment:
+  #     MYSQL_DATABASE: meubanco
+  #     MYSQL_USER: admin
+  #     MYSQL_PASSWORD: admin
+  #     MYSQL_ROOT_PASSWORD: root
+  #   volumes:
+  #     - ./.docker/mysql:/docker-entrypoint-initdb.d
+  #     - ./.docker/mysql/config:/etc/mysql/conf.d
+  #   networks:
+  #     - default
+  # mariadb:
+  #   container_name: "mysql"
+  #   image: mysql:latest
+  #   ports:
+  #     - "3306:3306"
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   environment:
+  #     MYSQL_DATABASE: ${DB_DATABASE}
+  #     MYSQL_USER: ${DB_USERNAME}
+  #     MYSQL_PASSWORD: ${DB_PASSWORD}
+  #     MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+  #   volumes:
+  #     - ./.docker/mysql:/docker-entrypoint-initdb.d
+  #     - ./.docker/mysql/config:/etc/mysql/conf.d
+  #     - ./.docker/mysql/data:/var/lib/mysql
+  #   restart: always
+  exads:
+    image: docker.io/bitnami/laravel:10
+    ports:
+      - '8000:8000'
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - './:/app'
+    depends_on:
+      - mysql
+  mysql:
+    image: docker.io/bitnami/mysql:8.0
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'mysql_data:/bitnami/mysql/data'
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      # ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    healthcheck:
+      test: ['CMD', '/opt/bitnami/scripts/mysql/healthcheck.sh']
+      interval: 15s
+      timeout: 5s
+      retries: 6
+
+volumes:
+  mysql_data:
+    driver: local
