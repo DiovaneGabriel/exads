@@ -33,4 +33,4 @@ SQL code is [here](https://github.com/DiovaneGabriel/exads/blob/main/others/sql_
 
 Others codes are [here](https://github.com/DiovaneGabriel/exads/blob/main/app/Components/helpers.php)
 
-You can view the project on [AWS EC2 Server](http://ec2-18-217-22-244.us-east-2.compute.amazonaws.com)
+You can view the project on [AWS EC2 Server](http://ec2-3-13-162-255.us-east-2.compute.amazonaws.com)
